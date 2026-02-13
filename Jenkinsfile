@@ -8,6 +8,7 @@ pipeline {
         BACKEND_IMAGE  = 'smart_bookmark_manager-backend'
         GIT_REPO       = 'https://github.com/chinthakadd7/Smart_Bookmark_Manager.git'
         GIT_BRANCH     = 'main'
+        EC2_PUBLIC_IP  = '56.228.2.133'  // Replace with your actual EC2 IP
     }
 
     stages {
@@ -34,7 +35,7 @@ pipeline {
                 stage('Frontend') {
                     steps {
                         script {
-                            sh "docker build -t ${FRONTEND_IMAGE}:latest ./frontend"
+                            sh "docker build --build-arg REACT_APP_API_URL=http://${EC2_PUBLIC_IP}:5000 -t ${FRONTEND_IMAGE}:latest ./frontend"
                             sh "docker tag ${FRONTEND_IMAGE}:latest ${DOCKERHUB_USERNAME}/${FRONTEND_IMAGE}:latest"
                             sh "docker push ${DOCKERHUB_USERNAME}/${FRONTEND_IMAGE}:latest"
                         }

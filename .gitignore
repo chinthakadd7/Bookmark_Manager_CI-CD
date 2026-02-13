@@ -41,3 +41,5 @@ crash.log
 
 # Optional: lock file
 .terraform.lock.hcl
+
+.env
