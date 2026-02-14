@@ -23,7 +23,7 @@ function Register() {
 
   return (
     <div>
-      <h2>Chinthaka Dissanayake</h2>
+      <h2>Sri Lanka</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="email"
