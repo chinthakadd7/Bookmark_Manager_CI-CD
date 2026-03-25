@@ -6,7 +6,7 @@ pipeline {
         DOCKERHUB_USERNAME = 'chinthaka7'
         FRONTEND_IMAGE = 'smart_bookmark_manager-frontend'
         BACKEND_IMAGE  = 'smart_bookmark_manager-backend'
-        GIT_REPO       = 'https://github.com/chinthakadd7/Smart_Bookmark_Manager.git'
+        GIT_REPO       = 'https://github.com/chinthakadd7/Bookmark_Manager_CI-CD.git'
         GIT_BRANCH     = 'main'
         EC2_PUBLIC_IP  = '56.228.2.133'  // Replace with your actual EC2 IP
     }
